@@ -67,10 +67,9 @@ void loop() {
       sampleNumber = 0;
     }
   }
-  // Simulate velocity measurement (in practice, you would measure or estimate this)
-  velocityCMperS = (newPositionCM - positionCM)/0.2;  // Assume loop runs every 200ms
+  
+  velocityCMperS = (newPositionCM - positionCM)/0.2;  
 
-  // State vector [position; velocity]
   float x[2] = { newPositionCM, velocityCMperS };
   recordedResponse.push_back(positionCM);
   timeData.push_back(millis());
